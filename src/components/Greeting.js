@@ -9,7 +9,7 @@ const Greeting = () => {
     dispatch(fetchGreeting());
   }, [dispatch]);
   return (
-    greeting?.map((greet) => <p key={greet.id}>{greet.message}</p>)
+    <p>{greeting.message}</p>
   );
 };
 
