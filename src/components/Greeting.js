@@ -8,12 +8,7 @@ const Greeting = () => {
   useEffect(() => {
     dispatch(fetchGreeting());
   }, [dispatch]);
-  return (
-    <>
-      <p>{greeting[0]?.message}</p>
-      <p>hello</p>
-    </>
-  );
+  return <p>{greeting[0]?.message}</p>;
 };
 
 export default Greeting;
