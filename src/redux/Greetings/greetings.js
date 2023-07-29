@@ -1,24 +1,24 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   loading: false,
   greetingDetails: [],
-  error: "",
+  error: '',
 };
 
-const API_URL = "http://127.0.0.1:3000/api/v1/greetings";
+const API_URL = 'http://127.0.0.1:3000/api/v1/greetings';
 
 export const fetchGreeting = createAsyncThunk(
-  "greetings/fetchingGreeting",
+  'greetings/fetchingGreeting',
   async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
     return data;
-  }
+  },
 );
 
 const greetingsReducer = createSlice({
-  name: "greetings",
+  name: 'greetings',
   initialState,
   extraReducers: (builder) => {
     builder.addCase(fetchGreeting.fulfilled, (state, action) => ({
